@@ -1,4 +1,4 @@
 package com.chess.chessgame;
 
-public class FirstClass {
+public class Chess {
 }
