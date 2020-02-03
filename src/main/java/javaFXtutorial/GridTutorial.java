@@ -1,4 +1,4 @@
-package com.chess.chessgame;
+package javaFXtutorial;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;

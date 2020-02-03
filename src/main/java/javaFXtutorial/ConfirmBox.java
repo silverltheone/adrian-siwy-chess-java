@@ -1,4 +1,4 @@
-package com.chess.chessgame;
+package javaFXtutorial;
 import javafx.stage.*;
 import javafx.scene.*;
 import javafx.scene.layout.*;
