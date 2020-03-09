@@ -1,11 +1,12 @@
 package com.chess.chessgame;
 
-import javafx.scene.effect.*;
-import javafx.scene.image.Image;
+import com.chess.chessgame.figures.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+
+import java.util.List;
 
 public class Game {
     private WhosTurn whosTurn;
@@ -27,11 +28,16 @@ public class Game {
             oldY=y;
             displayBoard(oldX, oldY);
         } else {
-            if(board.move(whosTurn,oldX,oldY,x,y))
-                whosTurn=turnSwitch(whosTurn);
-            oldX=-1;
-            oldY=-1;
-            displayBoard();
+            if(board.move(whosTurn,oldX,oldY,x,y)) {
+                whosTurn = turnSwitch(whosTurn);
+                System.out.println("It's " + whosTurn);
+                oldX = -1;
+                oldY = -1;
+//                board.checkingMoveResult(x, y);
+                board.bestMinMaxMove();
+                whosTurn = turnSwitch(whosTurn);
+                displayBoard();
+            }
         }
     }
 
@@ -63,4 +69,6 @@ public class Game {
             return WhosTurn.WHITE_TURN;
         }
     }
+
+
 }
